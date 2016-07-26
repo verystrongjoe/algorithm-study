@@ -1,0 +1,22 @@
+package algorithm;
+
+public class LIS {
+
+	private static int[100000] longest];
+	
+	public static void main(String[] args) {
+		LIS run = new LIS();
+		run.main2();
+		
+	}
+
+	private void main2() {
+		
+	}
+	
+	private int dp(int index) {
+		
+	}
+	
+	
+}

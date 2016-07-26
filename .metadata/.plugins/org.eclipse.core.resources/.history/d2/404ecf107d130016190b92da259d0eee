@@ -1,0 +1,108 @@
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Backtracking {
+	
+	public static List<int[]> c(int[] set, int cnt) {
+
+		List result = new ArrayList<int[]>();
+		int max = (int) (Math.pow(2, set.length) -1);
+		
+		for(int i=0; i <= max; i++) {
+			String binary = Integer.toBinaryString(i);
+			int[] subset = new int[cnt]; 
+			int index = 0;
+				
+			int counting = 0;
+			for( int j = 0; j < binary.length(); j++) {
+				if( binary.charAt(j) == '1' ) counting ++;
+			}
+
+			if( counting == cnt) {
+				int m = 0;
+				for( int k = 0; k < binary.length(); k++) {
+					if( binary.charAt(binary.length()-1-k) == '1' ) subset[m++] = set[k];
+				}
+				result.add(subset);
+			} 
+			
+//			if(subset.length == cnt && index == binary.length()-1) result.add(subset);
+		}
+		
+//		for(int i=0; i < result.size(); i++) {
+//			int[] list = (int[])result.get(i);
+//			System.out.print( i + 1+ " : " );
+//			for( int j = 0; j < list.length; j++)
+//			System.out.print( list[j] );
+//			System.out.println();
+//		}
+		
+		return result;
+	}
+	
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		Backtracking a = new Backtracking();
+		a.main2();
+	}
+	
+	public void main2() throws FileNotFoundException {
+
+//		BufferedReader in = new BufferedReader(new FileReader("sample.txt"));
+
+//				Scanner s = new Scanner(in);
+		Scanner s = new Scanner(System.in);
+		
+		int N = s.nextInt();
+		int M = s.nextInt();
+		
+		boolean[][] TeamArray = new boolean[N][N];
+		int[]  set = new int[N];
+		for(int i = 0; i < N; i++) 
+			for(int j = 0; j < N; j++) {
+				TeamArray[i][j] = false;
+			}
+
+		for(int i=0; i< N; i++) { 
+			set[i] = i;
+		} 
+		
+		for(int i=0; i < M; i++) {
+			int L1 = s.nextInt();
+			int L2 = s.nextInt();
+			TeamArray[L1-1][L2-1] = true; 
+		}
+
+		
+		List<int[]> playList = c(set,2);
+		int result = 0;
+		
+		for(int i = 0; i < playList.size(); i++) {
+			for(int j = 0; j < playList.size(); j++) {
+				
+				int teamAFirstPlayer  = playList.get(i)[0];
+				int teamASecondPlayer  = playList.get(i)[1];
+				
+				int teamBFirstPlayer  = playList.get(j)[0];
+				int teamBSecondPlayer  = playList.get(j)[1];
+				
+				if( TeamArray[teamAFirstPlayer][teamBFirstPlayer]  
+						&&
+						TeamArray[teamAFirstPlayer][teamBSecondPlayer]
+								&&
+								TeamArray[teamASecondPlayer][teamBFirstPlayer]  
+										&&
+										TeamArray[teamASecondPlayer][teamBSecondPlayer]
+						) result++;
+			}
+		}
+	
+		System.out.println(result);
+	}
+	
+
+
+}

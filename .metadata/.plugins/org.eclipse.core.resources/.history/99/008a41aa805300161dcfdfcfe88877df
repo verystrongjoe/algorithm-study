@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class source {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int holeWidth = sc.nextInt();
+		int materialCount = sc.nextInt();
+		int[] materialLengthList = new int[materialCount];
+		
+		for(int i = 0 ; i < materialCount; i++) {
+			materialLengthList[i] = sc.nextInt();
+		}
+		
+		
+		
+		
+	}
+
+}

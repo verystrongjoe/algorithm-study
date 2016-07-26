@@ -1,0 +1,19 @@
+package algorithm;
+
+public class LIS {
+
+	
+	public static void main(String[] args) {
+		LIS run = new LIS();
+		run.main2();
+		
+	}
+
+	private void main2() {
+		
+		
+	}
+	
+	
+	
+}

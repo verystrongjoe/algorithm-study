@@ -1,0 +1,37 @@
+package algorithm;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class LIS {
+
+	private static int[] longest;
+	
+	public static void main(String[] args) {
+		LIS run = new LIS();
+		run.main2();
+		
+	}
+
+	private void main2() {
+		longest = new int[1000000];
+		
+		BufferedReader in = new BufferedReader(new FileReader("sample.txt"));
+		Scanner s = new Scanner(in);
+//		Scanner s = new Scanner(System.in);
+
+		int N = s.nextInt();
+
+
+		
+		for(int i = 0; i <  )
+	
+	}
+	
+	private int dp(int index) {
+		
+	}
+	
+	
+}

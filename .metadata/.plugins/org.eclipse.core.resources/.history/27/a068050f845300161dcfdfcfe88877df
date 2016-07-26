@@ -63,12 +63,8 @@ public class source {
 						result =  materialLengthList[first] + materialLengthList[last];
 						result_first_index = first;
 						result_last_index = last;
-						first ++;
-						last = realsize;
 					}
 				}
-				
-				
 			}
 			
 		}

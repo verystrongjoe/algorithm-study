@@ -60,15 +60,9 @@ public class source {
 				
 				if(materialLengthList[first] + materialLengthList[last] == holeWidth)  {
 					if(result < materialLengthList[first] + materialLengthList[last]) {
-						result =  materialLengthList[first] + materialLengthList[last];
-						result_first_index = first;
-						result_last_index = last;
-						first ++;
-						last = realsize;
+						
 					}
 				}
-				
-				
 			}
 			
 		}

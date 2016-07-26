@@ -59,16 +59,8 @@ public class source {
 			for(int p = first; p < last; p++) {
 				
 				if(materialLengthList[first] + materialLengthList[last] == holeWidth)  {
-					if(result < materialLengthList[first] + materialLengthList[last]) {
-						result =  materialLengthList[first] + materialLengthList[last];
-						result_first_index = first;
-						result_last_index = last;
-						first ++;
-						last = realsize;
-					}
+					if(result < materialLengthList[first] + materialLengthList[last]) 
 				}
-				
-				
 			}
 			
 		}

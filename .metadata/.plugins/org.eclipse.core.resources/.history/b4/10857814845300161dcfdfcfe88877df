@@ -67,8 +67,6 @@ public class source {
 						last = realsize;
 					}
 				}
-				
-				
 			}
 			
 		}
